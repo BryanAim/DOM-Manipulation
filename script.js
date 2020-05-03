@@ -1,32 +1,18 @@
-const container = document.querySelector('#container');
+// Add a script tag to the bottom of the page for your code.
+// Add an event listener to the button so that it calls a makeMadLib function when clicked.
+var storyDiv = document.getElementById("story");
+const button = document.getElementById('lib-button');
+button.addEventListener('click', makeMadLib)
 
-const content = document.createElement('div');
-content.classList.add('content');
-content.textContent = 'This is the glorious text-content!';
 
-container.appendChild(content);
+function makeMadLib() {
+    let noun = document.querySelector('#noun');
+    let adjective = document.querySelector('#adjective');
+    let name = document.querySelector('#person');
+  // console.log(`${noun.value} ${adjective.value} ${name.value}` )
 
-  // ADD
-// <p> with red text that says “Hey I’m red!”
-const p = document.createElement('p')
-p.innerText = "Hey Im Red!";
-container.appendChild(p);
+  storyDiv.innerHTML = `${name.value} married a ${adjective.value} ${noun.value}... So weird!`;
+}
 
-// an <h3> with blue text that says “I’m a blue h3!”
 
-const h3 = document.createElement('h3');
-h3.textContent = "Im a blue h3";
-container.appendChild(h3);
-
-// a <div> with a black border and pink background color with the following elements inside of it:
-// another <h1> that says “I’m in a div”
-// a <p> that says “ME TOO!”
-
-const mydiv = document.createElement('div');
-const myH1 = document.createElement('h1');
-const myP = document.createElement('p');
-
-mydiv.appendChild(myH1);
-mydiv.appendChild(myP);
-
-container.appendChild(mydiv);
+// In the makeMadLib function, retrieve the current values of the form input elements, make a story from them, and output that in the story div (like "Pamela really likes pink cucumbers.")
